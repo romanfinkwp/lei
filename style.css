@@ -1,0 +1,77 @@
+/*
+Theme Name: Lei
+Theme URI: https://wordpress.org/themes/lei/
+Author: Roman Fink
+Author URI: https://profiles.wordpress.org/romanfink/
+Description: Elegant dark personal portfolio theme for creative directors, consultants, and professionals. Deep black background, light editorial typography, generous whitespace. Full Site Editing, 5 starter patterns, no code required.
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: lei
+Tags: one-column, custom-colors, custom-menu, editor-style, full-site-editing, block-patterns, portfolio, wide-blocks, block-styles
+*/
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* --- Stick footer to bottom --- */
+
+.wp-site-blocks {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wp-site-blocks > footer {
+	margin-block-start: 0px !important;
+}
+
+.wp-site-blocks > .wp-block-group {
+	margin-bottom: auto !important;
+}
+
+/* --- Remove block gap on mobile --- */
+
+@media (max-width: 781px) {
+	:where(.wp-site-blocks) > * {
+		margin-block-start: 0;
+	}
+}
+
+/* --- Navigation overlay (mobile menu) --- */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--background) !important;
+	color: var(--wp--preset--color--primary) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__responsive-container-content
+	.wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open
+	.wp-block-navigation__responsive-close {
+	color: var(--wp--preset--color--primary);
+}
+
+/* --- Custom block styles --- */
+
+.is-style-lei-italic {
+	font-style: italic;
+}
+
+.is-style-lei-text-balance {
+	text-wrap: balance;
+}
+
+@media (max-width: 781px) {
+	.is-style-lei-reverse {
+		flex-direction: column-reverse;
+	}
+}
